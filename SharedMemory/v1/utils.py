@@ -18,7 +18,7 @@ def get_ds(run=None, exp=None, live=False, calib_dir=None):
 
 def get_logger(level='info'):
     if level == 'info':
-        logging.basicConfig(level=logging.info)
+        logging.basicConfig(level=logging.INFO)
     elif level == 'debug':
         logging.basicConfig(level=logging.DEBUG)
     return logging.getLogger(__name__)
@@ -51,14 +51,12 @@ class MovingAverage(object):
         self.ravg = 0
         self.ravg_ts = deque(maxlen=self.ts_len)
         self.factor = factor
-        return
 
     def update_ravg(self, newData):
         if self.alpha is None:
             self.ravg = (newData + self.n * self.factor * self.ravg) / (self.n * self.factor + 1)
         else:
             self.ravg = self.alpha * newData + (1 - self.alpha) * self.ravg
-        return
 
     def update_ravg_ts(self, newData, needx=False):
         """ 
@@ -70,9 +68,7 @@ class MovingAverage(object):
             self.ravg_ts.append(self.ravg)
             if needx:
                 self.ravg_tsx = np.arange(len(self.ravg_ts))
-        return
 
     def new_ts_len(self, newLen):
         self.ts_len = newLen
         self.ravg_ts = deque(maxlen=self.ts_len)
-        return

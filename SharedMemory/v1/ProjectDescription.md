@@ -1,13 +1,9 @@
 This files contains my current thinking of this project.
 
 ### Motivation
-Haoyuan is paid to work on data-driven science at SLAC by Matthias.
-Therefore, Haoyuan has to do something related to this.
-
 The split-delay optics is quite complicated to align.
 An auto-alignment without operator interference can make the alignment of the optics less prone to operator bias. 
 It should be emphasized here that there is no guarantee of better performance with the auto-alignment procedure compared with operator.
-Haoyuan's initial idea is just to fulfill the requirement of the funding source and to reduce the operator's bias.
 
 ## Targets
 Because the optics is very complicated, Haoyuan considers it to be imporssible to achieve a complete auto-alignment from stretch during this development cycle.
